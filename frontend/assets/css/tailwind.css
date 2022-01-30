@@ -1,0 +1,13 @@
+@tailwind base;
+
+@layer base {
+  h1 {
+    @apply text-lg font-extrabold uppercase text-black;
+  }
+  h2 {
+    @apply text-base font-extrabold uppercase text-black;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;

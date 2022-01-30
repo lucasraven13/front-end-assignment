@@ -1,0 +1,47 @@
+@set('controlName', name)
+
+@if(width == 'full')
+<div class="w-full pr-3 pb-5">
+@else
+<div class="w-1/2 pr-3 pb-5">
+@end
+
+    <div class="bg-white p-2 rounded shadow flex flex-wrap items-center">
+        <div class="flex-1">
+            <label class="block text-xs font-semibold">{{title}}</label>
+            @if(inputMask)
+                <input class="block w-full border-none outline-none text-black" 
+                type="{{type || "text"}}" 
+                name="{{name || ""}}"
+                form-input="{{name || ""}}"
+                input-mask="{{inputMask}}" 
+                placeholder="{{placeholder || ""}}"
+                data-validators="{{validators || ""}}"
+                />
+            @else
+                <input class="block w-full border-none outline-none text-black" 
+                name="{{name || ""}}"
+                form-input="{{name || ""}}"
+                placeholder="{{placeholder || ""}}"
+                data-validators="{{validators || ""}}" />
+            @end
+        </div>
+        
+        @if(icon)
+            @if(tooltip)
+                <span class="text-center" data-css-only-tooltip="{{tooltip}}">
+                    <img src="{{icon}}" class="h-7">
+                </span>
+            @else
+                <span class="text-center">
+                    <img src="{{icon}}" class="h-7">
+                </span>
+            @end         
+        @end
+    </div>
+
+    @!component('components/checkout/error-message', {
+        name: name,
+        message: ""
+    })
+</div>

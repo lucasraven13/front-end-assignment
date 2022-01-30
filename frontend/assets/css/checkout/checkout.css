@@ -1,0 +1,25 @@
+@import '../tailwind.css';
+
+html,
+body {
+  background-color: #f2f2f2;
+}
+
+select {
+  appearance: none;
+  background-position-y: 0px;
+  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
+    no-repeat right;
+  -webkit-appearance: none;
+  appearance: none;
+  background-position-y: 0px;
+}
+
+.icons8-lock {
+  display: inline-block;
+  width: 10px;
+  height: 24px;
+  background: url('../../../public/images/lock.png') 50% 50% no-repeat;
+  background-size: 100%;
+  margin-left: 1.5rem;
+}

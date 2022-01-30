@@ -1,0 +1,36 @@
+@!component('components/checkout/section-title', {
+    number: 2,
+    title: 'Payment details',
+    iconClass: 'icons8-lock'
+})
+
+<div class="flex flex-wrap ml-7 mr-3" form-group>
+    @!component('components/checkout/text-input', {
+        title: 'Credit Card Number',
+        placeholder: '0000 - 0000 - 0000 - 0000',
+        inputMask: '0000 - 0000 - 0000 - 0000',
+        icon: 'images/visa.png',
+        name: 'creditCard',
+        validators: 'requiredValidator,creditCardValidator',
+        width: 'full'
+    })
+
+    @!component('components/checkout/text-input', {
+        title: 'Security Code',
+        type: 'password',
+        placeholder: '***',
+        inputMask: '000',
+        name: 'CVV',
+        validators: 'requiredValidator,cvvCardValidator',
+        icon: 'images/question.png',
+        tooltip: 'Lorem ipsum dolor sit amet...'
+    })
+
+    @!component('components/checkout/text-input', {
+        title: 'Expiration Date',
+        placeholder: 'MM / YY',
+        inputMask: '00 / 00',
+        name: 'expDate',
+        validators: 'requiredValidator,expDateCardValidator'
+    })
+</div>

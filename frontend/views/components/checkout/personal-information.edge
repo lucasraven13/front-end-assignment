@@ -1,0 +1,54 @@
+@!component('components/checkout/section-title', {
+    number: 1,
+    title: 'Personal Information'
+})
+
+<div class="flex flex-wrap ml-7 mr-3" form-group>
+    @!component('components/checkout/text-input', {
+        title: 'First name',
+        placeholder: 'Elon',
+        name: 'firstName',
+        validators: 'requiredValidator',
+    })
+    
+    @!component('components/checkout/text-input', {
+        title: 'Last name',
+        placeholder: 'Musk',
+        error: 'yes',
+        name: 'lastName',
+        validators: 'requiredValidator',
+    })
+
+    @!component('components/checkout/text-input', {
+        title: 'Email',
+        placeholder: 'Elon@spacesx.com',
+        name: 'email',
+        validators: 'requiredValidator,emailValidator',
+        width: 'full'
+    })
+
+    @!component('components/checkout/select-input', {
+        title: 'Country',
+        defaultValue: 'United States',
+        name: 'country',
+        options: ['United States', 'Norway', 'Great Britain'], 
+        validators: 'requiredValidator'
+    })
+
+    @!component('components/checkout/text-input', {
+        title: 'Postal Code',
+        placeholder: '10001',
+        inputMask: '00000',
+        name: 'postalCode',
+        validators: 'requiredValidator,postalCodeValidator'
+    })
+
+    @!component('components/checkout/text-input', {
+        title: 'Phone Number',
+        placeholder: '(000) 000-00-00',
+        inputMask: '(000) 000-00-00',
+        name: 'phone',
+        validators: 'requiredValidator,phoneNumberValidator',
+        width: 'full'
+    })
+</div>

@@ -1,0 +1,20 @@
+<div class="w-{{width ? width : '1/2'}} pr-3 pb-5">
+    <div class="flex-1 bg-white p-2 rounded shadow">
+        <label class="block text-xs font-semibold select-none">{{title}}</label>
+        <select class="block w-full border-none outline-none text-black cursor-pointer select-none" 
+          name="{{name || ""}}"
+          value="{{defaultValue || ""}}" 
+          placeholder="{{placeholder || ""}}" 
+          form-input="{{name || ""}}"
+          data-validators="{{validators || ""}}"
+          readonly>
+          @each(option in options)
+            <option>{{option}}</option>
+          @end
+        </select>
+    </div>
+    @!component('components/checkout/error-message', {
+        message: ""
+      })
+</div>
+

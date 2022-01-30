@@ -1,4 +1,4 @@
-const { join } = require('path')
+const {join} = require('path')
 const Encore = require('@symfony/webpack-encore')
 
 /*
@@ -46,6 +46,8 @@ Encore.setPublicPath('/assets')
 |
 */
 Encore.addEntry('app', './frontend/assets/js/app.js')
+Encore.addEntry('bacon', './frontend/assets/js/bacon.js')
+Encore.addEntry('checkout', './frontend/assets/js/checkout.js')
 
 /*
 |--------------------------------------------------------------------------
@@ -127,7 +129,7 @@ Encore.enableVersioning(Encore.isProduction())
 | to watch them explicitly and livereload the browser.
 |
 */
-Encore.configureDevServerOptions((options) => {
+Encore.configureDevServerOptions(options => {
   /**
    * Normalize "options.static" property to an array
    */
@@ -156,7 +158,7 @@ Encore.configureDevServerOptions((options) => {
 | favorite CSS precompiler
 |
 */
-// Encore.enableSassLoader()
+Encore.enableSassLoader()
 // Encore.enableLessLoader()
 // Encore.enableStylusLoader()
 
@@ -169,7 +171,7 @@ Encore.configureDevServerOptions((options) => {
 | PostCSS or CSS.
 |
 */
-// Encore.enablePostCssLoader()
+Encore.enablePostCssLoader()
 // Encore.configureCssLoader(() => {})
 
 /*
